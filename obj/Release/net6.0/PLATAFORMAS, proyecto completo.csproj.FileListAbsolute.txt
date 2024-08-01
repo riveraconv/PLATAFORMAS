@@ -1,0 +1,14 @@
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\PLATAFORMAS, proyecto completo.exe
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\PLATAFORMAS, proyecto completo.deps.json
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\PLATAFORMAS, proyecto completo.runtimeconfig.json
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\PLATAFORMAS, proyecto completo.dll
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\PLATAFORMAS, proyecto completo.pdb
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS, proyecto completo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS, proyecto completo.AssemblyInfoInputs.cache
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS, proyecto completo.AssemblyInfo.cs
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS, proyecto completo.csproj.CoreCompileInputs.cache
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS, proyecto completo.dll
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\refint\PLATAFORMAS, proyecto completo.dll
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS, proyecto completo.pdb
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS, proyecto completo.genruntimeconfig.cache
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\ref\PLATAFORMAS, proyecto completo.dll

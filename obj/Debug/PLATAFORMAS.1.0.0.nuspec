@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>PLATAFORMAS</id>
+    <version>1.0.0</version>
+    <title>Juego de Plataformas</title>
+    <authors>PLATAFORMAS</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="16cead37a8c50ba13c03b4327a77aca4d534948d" />
+    <dependencies>
+      <group targetFramework="net6.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Debug\net6.0\PLATAFORMAS.runtimeconfig.json" target="lib\net6.0\PLATAFORMAS.runtimeconfig.json" />
+    <file src="C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Debug\net6.0\PLATAFORMAS.dll" target="lib\net6.0\PLATAFORMAS.dll" />
+  </files>
+</package>
