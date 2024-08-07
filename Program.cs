@@ -6,13 +6,10 @@ namespace PLATAFORMAS
     {
         static void Main()
         {
-            
             ScreensOfTheGame screens = new();
             GamePlayScreen menu = new();
-            
 
-            menu.LaunchMenu(menu, screens);    //se llama al menú del juego
-
+            menu.LaunchMenu(menu, screens);
         }
     }
 }

@@ -6,6 +6,7 @@
     <RootNamespace>PLATAFORMAS__proyecto_completo</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>Juego de Plataformas</Title>
   </PropertyGroup>
 
 </Project>

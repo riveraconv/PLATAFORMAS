@@ -1,90 +1,125 @@
-﻿using System;
+﻿using PLATAFORMAS;
+using System;
 using System.Collections.Generic;
 
-namespace PLATAFORMAS {
+namespace PLATAFORMAS
+{
     public class Level
     {
-        public List<string> Layout { get; set; }
-        public List<Level> Levels { get; set; }
-        public int CurrentLevelIndex { get; set; }
-        public Level(List<string> layout)
+        public static List<Level> Levels { get; private set; } = new List<Level>();
+        public List<string> Layout { get; private set; }
+        public (int X, int Y) InitialPlayerPosition { get; private set; }
+        public static int CurrentLevelIndex { get; private set; }
+
+        public Level(List<string> layout, (int X, int Y) initialPlayerPosition)
         {
             Layout = layout;
+            InitialPlayerPosition = initialPlayerPosition;
         }
         public void DrawLevel()
         {
             Console.Clear();
 
+            int offsetX = 10;
+            int offsetY = 17;
+
+
             for (int i = 0; i < Layout.Count; i++)
             {
-                Console.SetCursorPosition(28, i + 17);
+                Console.SetCursorPosition(offsetX, i + offsetY);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.BackgroundColor = ConsoleColor.Black;
                 Console.WriteLine(Layout[i]);
+                Console.ResetColor();
             }
         }
-        public Level()
+        
+
+        public (int, int) GetInitialPlayerPosition()
+        {
+            return InitialPlayerPosition;
+        }
+        public static void InitializeLevels()
         {
             Levels = new List<Level>
             {
-                
-                new Level(new List<string>
-                {
-                    "__________  ________________  _____________________  ________", //1
-                }),
-                new Level(new List<string>
-                {
-                    "__________   _________   _________   _________   ____________", //2
-                }),
-                new Level (new List<string>
-                {
-                    "__________  ____  ____   _________  ____   ____  _______   __", //3
-                }),
-                new Level(new List<string>
-                {
-                    "                 ________________________                    ",
-                    "_______ ______                             ____   _____      ", //4
-                    "                   ________   ____  ______  _______   ____ __",
-                }),
-                new Level(new List<string>
-                {
-                    "                _____                     _____              ",
-                    "          ____          ____        ____                     ", //5
-                    "________                      ____               ____  ______",
-                }),
-                new Level (new List<string>
-                {
-                    "                                _______   ____   ____   _____",
-                    "_____                      ____                              ",  //6
-                    "       _____         ____       ____                         ",
-                    "              _____                    ____   ____   ____   _",
-                }),
-                new Level(new List<string>
-                {
-                    "_____   ____                                 ____   ____  ___",
-                    "               _____   ____   ____   _____                   ",   //7
-                    "            ____   ____   _____   ____    ____   ____  _____ ",
-                }),
-                new Level(new List<string>
-                {
-                    "               ____              ____                       _",
-                    "        ____              ____          ____         ____    ",    //8
-                    "_____              ____                        ____          ",
-                }),
-                new Level(new List<string>
-                {
-                    "_____                                                     ___",
-                    "        _____                                      ____      ",
-                    "                ____                        ____             ",    //9
-                    "                       ____          ____                    ",
-                    "                              ____                           ",
-                }),
-                new Level(new List<string>
-                {
-                    "                                                         ____",
-                    "                                                             ",    //10
-                    "_____   ____   ____   ____   ____   ____   ____   _____      ",
-                }),
+                new (new List<string>
+                    {
+                        "                                                                                         <|",
+                        "                                                                                          |",
+                        "______________  __________________  _________________  _________________  ________________|"  //L1 x90p 
+
+                    }, (10, 19)),
+                new (new List<string>
+                    {
+                        "                                                                                         <|",
+                        "                                                                                          |",
+                        "______________  __________________  __________________  ________________   _______________|" //2
+
+                    }, (10, 19)),
+                new (new List<string>
+                    {
+                        "                                                                                         <|",
+                        "                                                                                          |",
+                        "_________________________   _______________   _______________   __________________________|" //3
+                    },(10, 19)),
+                new (new List<string>
+                    {
+                        "                                                                                         <|",
+                        "                                                                                          |",
+                        "_________________________   _____________   __   _____________   _________________________|" //4   
+                },(10, 19)),
+                new (new List<string>
+                    {
+                        "                                                                                         <|",
+                        "                _______________________   _____________________________                   |", //5
+                        "______________                                                           _________________|"
+                    },(10, 19)),
+                new (new List<string>
+                    {
+                        "                                  ____   ___   ____                                      <|",
+                        "                    _________  ____               ____  _______________                   |", //6
+                        "__________________                                                       _________________|"
+                },(10, 19)),
+                new (new List<string>
+                    {
+                        "_____________                                 ____   ____  ___  __  __  _  _             <|",
+                        "               _____   ____   ____   _____                                                |",   //7
+                        "            ____   ____   _____   ____    ____   ____  _____  ________   __________   ____|"
+                    },(10, 17)),
+                new (new List<string>
+                    {
+                        "____                                          __                                           ",
+                        "     ___                                ____      ____                                   <|",
+                        "          ___                     ____                  ____                              |",    //8
+                        "               _________   _____                              _____   ____   _____________|"
+                    },(10, 17)),
+                new (new List<string>
+                    {
+                        "______                                                ___                                <|",
+                        "        _____                                   ____       __                             |",
+                        "                ____                      ____                 __              __  __  ___|",    //9
+                        "                       ____         ____                           __      __              ",
+                        "                              ____                                     __                  "
+                },(10, 17)),
+                new (new List<string>
+                    {
+                        "__                                __                                        ______         ",
+                        "                               __    __                                 ___                ",
+                        "                            __          __                ___  ___  ___                  <|",    //10
+                        "                       ____               ____       ____                                 |",
+                        "     ____   ____   ___                          ____                                    __|"
+                    }, (10, 17))
             };
             CurrentLevelIndex = 0;
+        }
+        public void DebugInitialPlayerPosition()        //método de testing
+        {
+            var (x, y) = GetInitialPlayerPosition();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(0, 1); 
+            Console.WriteLine($"DEBUG: Initial Player Position for Level {CurrentLevelIndex}: X = {x}, Y = {y}");
+            Console.ResetColor();
         }
         public void RestartLevels()
         {
@@ -92,8 +127,10 @@ namespace PLATAFORMAS {
         }
         public bool IsOnPlatform(int x, int y)
         {
-            int relativeX = x - 28;
-            int relativeY = y - 17;
+            int offsetX = 11;   // hacemos coincidir el offset con el ajuste de plataforma hueco. Funciona con IsOnGround() en Character
+            int offsetY = 17;
+            int relativeX = x - offsetX;
+            int relativeY = y - offsetY;
 
             if (relativeY >= 0 && relativeY < Layout.Count && relativeX >= 0 && relativeX < Layout[relativeY].Length)
             {
@@ -101,11 +138,8 @@ namespace PLATAFORMAS {
             }
             return false;
         }
-        
     }
 }
         
-    
-
-    
+        
     

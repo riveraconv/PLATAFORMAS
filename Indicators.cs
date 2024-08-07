@@ -5,13 +5,9 @@ namespace PLATAFORMAS
 {
     public class Indicators
     {
-        //propiedades de cada uno de los indicadores
         public Scores PlayerScores { get; set; }
         public Lifes PlayerLifes { get; set; }
         public StageNumber PlayerStage { get; set; }
-
-
-        //constructor que inicializa los indicadores
         public Indicators()
         {
             PlayerScores = new Scores();
@@ -24,7 +20,6 @@ namespace PLATAFORMAS
             PlayerLifes.ResetLifes();
             PlayerStage.ResetStage();
         }
-
         public class Scores
         {
             public int PlayerScore {  get; set; }
@@ -48,10 +43,16 @@ namespace PLATAFORMAS
             }
             public void PrintScore()
             {
+                ClearScoreLine();
                 Console.SetCursorPosition(5, 5);
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write($"Score: {PlayerScore}");
                 Console.ResetColor();
+            }
+            public void ClearScoreLine()       //nos asegura que se reescriben bien los puntos en las coordenadas.
+            {
+                Console.SetCursorPosition(5, 5);
+                Console.Write(new string(' ', Console.WindowWidth));
             }
             public void WriteScoresAtTable()
             {
@@ -107,32 +108,26 @@ namespace PLATAFORMAS
             {
                 PlayerLifes = 3;
             }
+            public void AddLife()
+            {
+                PlayerLifes++;
+            }
             public void LoseLife()
             {
                 PlayerLifes --;
             }
             public void PrintLifes()
             {
+                ClearLifesLine();
                 Console.SetCursorPosition(5, 6);
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write($"Lifes: {PlayerLifes}");
                 Console.ResetColor();
             }
-            public void LosingALifeMessage()
+            public void ClearLifesLine()
             {
-                Console.SetCursorPosition(46, 5);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("You fell!! A life was lost!");
-                Console.ResetColor();
-            }
-            public void LosingALifeMessageAndPoints()
-            {
-                Console.SetCursorPosition(46, 5);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("You fell!! A life was lost!");
-                Console.SetCursorPosition(49, 8);
-                Console.WriteLine("10 points were lost!");
-                Console.ResetColor();
+                Console.SetCursorPosition(5, 6);
+                Console.Write(new string(' ', Console.WindowWidth));
             }
             public void ResetLifes()
             {
@@ -155,24 +150,56 @@ namespace PLATAFORMAS
                 Console.SetCursorPosition(5, 7);
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write($"Stage: {PlayerStage}");
-            }
-            public void StageClearMessage()
-            {
-                Console.SetCursorPosition(35, 5);
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write("Stage Clear! Well done! Entering to the next stage..");
-                Console.SetCursorPosition(55, 8);
-                Console.Write("GET READY!");
-                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.ResetColor();
+            }
+            public void ClearStageLine()
+            {
+                Console.SetCursorPosition(5, 7);
+                Console.Write(new string(' ', Console.WindowWidth));
             }
             public void ResetStage()
             {
                 PlayerStage = 1;
             }
         }
-        
-        
+        // mostrará el mensaje que sea necesario y lo borrará cuando prosiga el juego
+        public void DisplayMessageWithPosition(int x, int y, string message, ConsoleColor color, bool clearAfterDelay = false, int delaMillisecods = 1000)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(new string(' ', Console.WindowWidth - x));
+            Console.SetCursorPosition(x, y);
+            Console.ForegroundColor = color;
+            Console.Write(message);
+            Console.ResetColor();
+
+            if (clearAfterDelay)
+            {
+                System.Threading.Thread.Sleep(delaMillisecods);
+                ClearLineAtPosition (x, y);
+            }
+        }
+        public static void ClearLineAtPosition(int x, int y)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(new string(' ', Console.WindowWidth - x));
+        }
+        public void CountDown()
+        {
+            int x = 8;
+            int y = 13;
+
+            string[] countdownNumbers = { "3", "2", "1", "GO!" };
+
+            foreach (var number in countdownNumbers)
+            {
+                for (int dots = 1; dots <= 5; dots++)  // Aumentar los puntos suspensivos hasta 5
+                {
+                    string message = number + new string('.', dots);
+
+                    DisplayMessageWithPosition(x, y, message, ConsoleColor.DarkYellow, true, 100);  // Cambiar el delay a 300ms para una visualización más fluida
+                }
+            }
+        } 
     }
 }
 

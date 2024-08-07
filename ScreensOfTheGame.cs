@@ -2,18 +2,15 @@
 
 namespace PLATAFORMAS
 {
-    //clase que maneja las diferentes pantallas del juego
     public class ScreensOfTheGame
     {
-        //propiedades de cada una de las pantallas
         public StartScreen WelcomeScreen { get; set; }
         public EndScreen EndGameScreen { get; set; }
         public ScoreScreen GameScoresScreen { get; set; }
         public FinalScreen GameFinishedScreen { get; set; } 
         public InstructionsScreen GameInstructionsScreen { get; set; }
-
-
-        //constructor que inicializa las pantallas
+        public DefaultMenuOptionScreen DefaultMenuAdvertisement {  get; set; }
+        public Indicators Indicators { get; set; }
         public ScreensOfTheGame()
         {
             WelcomeScreen = new StartScreen();
@@ -21,29 +18,19 @@ namespace PLATAFORMAS
             GameScoresScreen = new ScoreScreen();
             GameFinishedScreen = new FinalScreen();
             GameInstructionsScreen = new InstructionsScreen();
+            DefaultMenuAdvertisement = new DefaultMenuOptionScreen();
+            
         }
-
-        //clase que representa la pantalla de bienvenida, da las 3 opciones, empezar, ver puntuaciones, salir.
         public class StartScreen
         {
-            public void ShowStartScreen()
+            public void ShowStartScreen(Indicators indicators)
             {
-                Console.SetCursorPosition(40, 5);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("¡¡¡¡WELCOME TO THE PLATFORMS GAME!!!!");
+                indicators.DisplayMessageWithPosition(40, 5, "¡¡¡¡Welcome to the platforms game!!!!", ConsoleColor.Yellow, false);
+                indicators.DisplayMessageWithPosition(42, 10, "-- Press 1 to start a New Game --", ConsoleColor.DarkGreen, false);
+                indicators.DisplayMessageWithPosition(42, 12, "-- Press 2 to show Game Scores --", ConsoleColor.DarkGreen, false);
+                indicators.DisplayMessageWithPosition(42, 14, "-- Press 3 to show Instructions --", ConsoleColor.DarkGreen, false);
+                indicators.DisplayMessageWithPosition(42, 16, "-- Press 4 to Exit of the game --", ConsoleColor.DarkGreen, false);
                 Console.ResetColor();
-                Console.WriteLine();
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.SetCursorPosition(42, 10);
-                Console.WriteLine("-- Press 1 to start a NEW GAME --");
-                Console.SetCursorPosition(42, 12);
-                Console.WriteLine("-- Press 2 to show GAME SCORES --");
-                Console.SetCursorPosition(42, 14);
-                Console.WriteLine("-- Press 3 to show INSTRUCTIONS --");
-                Console.SetCursorPosition(42, 16);
-                Console.WriteLine("-- Press 4 TO EXIT of the game --");
-                Console.ResetColor();
-                
             }
         }
         public class ScoreScreen
@@ -55,67 +42,54 @@ namespace PLATAFORMAS
                 Console.Clear();
             }
         }
-
-        //clase que representa la pantalla de fin del juego
-
         public class EndScreen
         {
-            public void ShowEndScreen()
+            public void ShowEndScreen(Indicators indicators)
             {
-                Console.SetCursorPosition(46, 5);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("----GAME OVER----");
-                Console.SetCursorPosition(36, 15);
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Thank you for playing my PLATFORM GAME...");
+                indicators.DisplayMessageWithPosition(46, 5, "----GAME OVER----", ConsoleColor.Red, false);
+                indicators.DisplayMessageWithPosition(36, 15, "Thank you for playing my Platform Game!", ConsoleColor.Cyan, false);
                 Console.ResetColor();
             }
-            
         }
         public class FinalScreen
         {
-            public void ShowFinalScreen()
+            public void ShowFinalScreen(Indicators indicators)
             {
-                Console.SetCursorPosition(46, 5);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("----WELL DONE! YOU HAVE COMPLETE ALL THE LEVELS----");
-                Console.SetCursorPosition(50, 8);
-                Console.WriteLine("CONGRATULAIONS!!");
+                indicators.DisplayMessageWithPosition(32, 5, "----WELL DONE!! YOU HAVE COMPLETE ALL THE LEVELS!!----",  ConsoleColor.Yellow, false, 2000);
+                indicators.DisplayMessageWithPosition(50, 8, "CONGRATULATIONS!!", ConsoleColor.Yellow, false, 2000);
+                indicators.DisplayMessageWithPosition(39, 15, "Thank you for playing my Platform Game!", ConsoleColor.Cyan, false, 2000);
+                indicators.DisplayMessageWithPosition(37, 24, "[Press any key to return to the Main Menu]", ConsoleColor.Blue, false);
                 Console.ResetColor();
-                Console.SetCursorPosition(36, 15);
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Thank you for playing my PLATFORM GAME...");
-                Console.ResetColor();
+                Console.ReadKey();
+                Console.Clear();
             }
         }
         public class InstructionsScreen
         {
-            public void ShowInstructions()
+            public void ShowInstructions(Indicators indicators)
             {
-                Console.Clear();
-                Console.SetCursorPosition(40, 5);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("----INSTRUCTIONS OF THE GAME----");
-                Console.SetCursorPosition(43, 8);
-                Console.WriteLine("Welcome to the platforms game.");
-                Console.SetCursorPosition(21, 11);
-                Console.Write("Controls: - Use UP ARROW for jump. Press ESCAPE to exit of the game at any moment.");
-                Console.SetCursorPosition(21, 14);
-                Console.WriteLine("Tips:     - Don't press the up key too quickly, this is a console simulated game.");
-                Console.SetCursorPosition(30, 15);
-                Console.WriteLine("   If you do that, the console gets saturated.");
-                Console.SetCursorPosition(28, 17);
-                Console.WriteLine("   - The max jump distance is 4 ASCII characters.");
-                Console.SetCursorPosition(28, 19);
-                Console.WriteLine("   - You have a few tenths of a second of reaction time from the jump-point.");
-
-                Console.SetCursorPosition(36, 24);
-                Console.ForegroundColor= ConsoleColor.Blue;
-                Console.WriteLine("[Press any key to return to the Main Menu]");
+                indicators.DisplayMessageWithPosition(40, 5, "*----INSTRUCTIONS OF THE GAME----*", ConsoleColor.Yellow, false);
+                indicators.DisplayMessageWithPosition(19, 8, "Controls: - Use UP ARROW for jump. Press ESCAPE to exit of the game at any moment.", ConsoleColor.Yellow, false);
+                indicators.DisplayMessageWithPosition(19, 11, "Rules:   - You have a few tenths of a second of reaction time from the jump-point.", ConsoleColor.Yellow, false);
+                indicators.DisplayMessageWithPosition(19, 13, "         - Each stage you complete, will give you 20 points and a life.", ConsoleColor.Yellow, false);
+                indicators.DisplayMessageWithPosition(19, 15, "         - If you fall, you will lose 10 points and one of the remaining lives.", ConsoleColor.Yellow, false);
+                indicators.DisplayMessageWithPosition(19, 17, "Tips:    - If you have difficulties passing a level, try different jump point distances.", ConsoleColor.Yellow, false);
+                indicators.DisplayMessageWithPosition(36, 24, "[Press any key to return to the Main Menu]", ConsoleColor.Blue, false);
                 Console.ResetColor();
                 Console.ReadKey();
                 Console.Clear();
-
+            }
+        }
+        public class DefaultMenuOptionScreen
+        {
+            public void ShowDefaultMenuMessage(Indicators indicators)
+            {
+                indicators.DisplayMessageWithPosition(40, 5, "¡¡¡¡SELECT A VALID OPTION, PLEASE!!!!", ConsoleColor.Red, false);
+                indicators.DisplayMessageWithPosition(42, 10, "-- Press 1 to start a New Game --", ConsoleColor.DarkGreen, false);
+                indicators.DisplayMessageWithPosition(42, 12, "-- Press 2 to show Game Scores --", ConsoleColor.DarkGreen, false);
+                indicators.DisplayMessageWithPosition(42, 14, "-- Press 3 to show Instructions --", ConsoleColor.DarkGreen, false);
+                indicators.DisplayMessageWithPosition(42, 16, "-- Press 4 to Exit of the game --", ConsoleColor.DarkGreen, false);
+                Console.ResetColor();
             }
         }
     }     

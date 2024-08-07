@@ -6,17 +6,24 @@ namespace PLATAFORMAS
     {
         public int PositionX { get; set; }
         public int PositionY { get; set; }
+        public int PreviousPositionX { get; set; }
+        public int PreviousPositionY { get; set; }
+        public int Speed { get; set; }
+        private int JumpVelocity { get; set; }
+        private int HorizontalSpeed { get; set; }
         public bool IsFalling { get; set; }
         public bool CanJump { get; private set; } = true;
-        private int jumpVelocity;
-        private int horizontalSpeed;
+
         public Character(int x, int y)
         {
-            PositionX = x;
+            PositionX = x = 10;
             PositionY = y;
+            PreviousPositionX = x;
+            PreviousPositionY = y;
             IsFalling = false;
-            jumpVelocity = 0;
-            horizontalSpeed = 0;
+            Speed = 0;
+            JumpVelocity = 0;
+            HorizontalSpeed = 0;
         }
         public void DrawPlayer()
         {
@@ -24,102 +31,161 @@ namespace PLATAFORMAS
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.Write("ö");
             Console.ResetColor();
-        }
-        public void MoveRight(int speed)
-        {
-            horizontalSpeed = speed;
-            PositionX += horizontalSpeed;
             
         }
-        public void Jump(int initialJumpVelocity)
+        public void UndrawPlayer(Level currentLevel)
+        {
+            Console.SetCursorPosition(PreviousPositionX, PreviousPositionY);
+
+            if (currentLevel.IsOnPlatform(PreviousPositionX + 1, PreviousPositionY))
+            {
+                Console.Write('_');
+            }
+            else
+            {
+                Console.Write(' ');
+            }
+        }
+        public void MoveRight(int speed, Level currentLevel)
+        {
+            UpdatePosition(() =>
+            {
+                PositionX += speed;
+            }, currentLevel);
+        }
+        public void Jump(int initialJumpVelocity, Level currentLevel)
         {
             if (CanJump)
             {
-
-                jumpVelocity += initialJumpVelocity;
-                IsFalling = true;
-                CanJump = false;
+                UpdatePosition(() =>
+                {
+                    JumpVelocity = initialJumpVelocity;
+                    IsFalling = true;
+                    CanJump = false;
+                }, currentLevel);
             }
         }
         public void ApplyGravity(int gravity, Level currentLevel)
         {
             if (IsFalling)
             {
-                if (jumpVelocity > 0)
+                UpdatePosition(() =>
                 {
-                    FallDuringJump();
-                }
-                else
-                {
-                    FallFromPlatform(gravity, currentLevel);
-                }
+                    if (JumpVelocity > 0)
+                    {
+                        FallDuringJump();
+                    }
+                    else
+                    {
+                        FallFromPlatform(gravity, currentLevel);
+                    }
+                }, currentLevel);
             }
-            else
+            else if (!IsOnGround(currentLevel))
             {
-                if (!IsOnGround(currentLevel))
-                {
-                    IsFalling = true;
-                    horizontalSpeed = 0;
-                }
+                StartFalling();
             }
         }
-        public void FallDuringJump()
+        private void FallDuringJump()
         {
-            PositionY -= jumpVelocity;
-            jumpVelocity--;
+            PositionY -= JumpVelocity;
+            JumpVelocity--;
 
-            if(jumpVelocity <= 0)
+            if (JumpVelocity <= 0)
             {
-                IsFalling = true;
-            }
+                IsFalling = false;
+            }           
         }
         private void FallFromPlatform(int gravity, Level currentLevel)
         {
             PositionY += gravity;
 
-            if (!IsOnGround(currentLevel) && CanJump)
+            if (IsOnGround(currentLevel))
             {
-                IsFalling = true;
-                PositionX -= horizontalSpeed;
+               StopFalling();
             }
             else
             {
-                IsFalling = false;
-                CanJump = true;
+                IsFalling = true;
+                PositionX -= HorizontalSpeed;
+
+                if (!IsNearPlatform(currentLevel))
+                {
+                    IsFalling = true;
+                    PositionX -= HorizontalSpeed;
+                }
+                else
+                {
+                    StopFalling();
+                }
             }
         }
         public bool IsOnGround(Level currentLevel)
         {
-            int checkX = Math.Max(PositionX - 1, 0);
-            bool onGround = currentLevel.IsOnPlatform(checkX, PositionY);
+            int checkX = PositionX;
+            bool onGround = currentLevel.IsOnPlatform(checkX, PositionY) ||
+                            currentLevel.IsOnPlatform(checkX + 1, PositionY);
             if (onGround)
             {
-                CanJump = true;
-                IsFalling = false;
+                UpdatePosition(() =>
+                {
+                    IsFalling = false;
+                    CanJump = true;
+                }, currentLevel);
             }
             return onGround;
         }
-        public bool IsBelowGround(Level currentLevel)
+        public bool IsBelowGround()
         {
             return PositionY >= 24;
         }
-        public void Fall(int fallSpeed)
-        {
-            PositionY += fallSpeed;
+        private void StartFalling()
+        {            
+           IsFalling = true;
+           HorizontalSpeed = 0;
         }
         public void StopFalling()
         {
             IsFalling = false;
-        }
-        public void ResetPosition(int x, int y)
-        {
-            PositionX = x;
-            PositionY = y;
-            IsFalling = false;
             CanJump = true;
-            horizontalSpeed = 0;
         }
-      
+        private bool IsNearPlatform(Level currentLevel)
+        {
+            // Ajusta la verificación para comprobar si hay una plataforma cerca y dibujar '_' o ' ' antes de llegar y después.
+            int offsetX = 10 + 1; // corrección del margen para la verificacion
+            int relativeX = PositionX - offsetX;
+            int relativeY = PositionY - 17;
+
+            // Comprueba en una región alrededor del personaje
+            for (int dx = -1; dx <= 1; dx++)
+            {
+                if (currentLevel.IsOnPlatform(PositionX + dx, PositionY + 1))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void UpdatePosition(Action positionUpdateAction, Level currentLevel)
+        {
+            UndrawPlayer(currentLevel);
+            positionUpdateAction();
+            PreviousPositionX = PositionX;
+            PreviousPositionY = PositionY;
+            DrawPlayer();
+        }
+        public void ResetPosition(int x, int y, Level currentLevel)
+        {
+            UpdatePosition(() =>
+            {
+                PositionX = x;
+                PositionY = y;
+                IsFalling = false;
+                CanJump = true;
+                HorizontalSpeed = 0;
+            }, currentLevel);
+        }
     }
 }
+
 
