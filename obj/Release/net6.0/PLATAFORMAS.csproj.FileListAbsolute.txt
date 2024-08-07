@@ -13,3 +13,7 @@ C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\refin
 C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS.pdb
 C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS.genruntimeconfig.cache
 C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\ref\PLATAFORMAS.dll
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\PLATAFORMAS.dll.manifest
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\PLATAFORMAS.application
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS.dll.manifest
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\obj\Release\net6.0\PLATAFORMAS.application

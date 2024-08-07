@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="PLATAFORMAS.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="PLATAFORMAS.exe" version="1.0.0.1" publicKeyToken="3dc01d2da2ddb9d1" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Launcher" version="8.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="16384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="17296">
       <assemblyIdentity name="Launcher" version="8.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XFzHQgCkd9h+MuRDaHstSjLwJJTKMwtjPO2rA0k3Dos=</dsig:DigestValue>
+        <dsig:DigestValue>/y+Im/VWHHqliC7Ff2UojsQ1e+N8e+iibJ9Tuyeqykk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,22 +62,22 @@
       <dsig:DigestValue>khyJXof6UZf8T+uc6qkXabDcXwMjFycVX7A4tflMcVw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PLATAFORMAS.dll" size="27648">
+  <file name="PLATAFORMAS.dll" size="28560">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Qh8bSrdv+oHirl+apZR8ted7Svw3avOwu7xRGt5a/Ec=</dsig:DigestValue>
+      <dsig:DigestValue>c0FfogzDjj1Jw55EIf5cnOsDvwejpe3sJjBTMV5lfo8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PLATAFORMAS.exe" size="150528">
+  <file name="PLATAFORMAS.exe" size="151440">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rBM+VQLYMdT+/LpCsm59YIriuNjkFgMdmbBjDcEdyTM=</dsig:DigestValue>
+      <dsig:DigestValue>rH6QGCZp2kRGCx360yX1u/CRCbSUpHGrDpdefaRJ7w0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PLATAFORMAS.runtimeconfig.json" size="253">
@@ -89,4 +89,4 @@
       <dsig:DigestValue>3tOutYVqEdsLZUp4VXRJDKtVg56/sX7+njm4lhj8W5E=</dsig:DigestValue>
     </hash>
   </file>
-</asmv1:assembly>
+<publisherIdentity name="CN=ALEX\AR" issuerKeyHash="9e812135736338cfbbccede083518839463f73e2" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>scDYnyrdELvr8rMgz26yDuv0dyLNXJBhOR6po8to/Yw=</DigestValue></Reference></SignedInfo><SignatureValue>M6jX+dWRy7o9DIMlwpLArPEQJvnpHzvrpC0NNGhuGSo447dwzeJMdFVRhSpFtSM/HauGOO4QQJT9yQfzHicPEU5GydiyAdAMyL1LNWuLzzn7VzBEFq7J2tg+az/jbNb50EvM9llKJmL6n+SeE2I9jJLasKdnzaJV1YV/75LFr9E=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xyY/Ea1/SrluE9QQKKpFDvLcTfTuCRrvA/CLGSYfaSQnklPbtLCyG00TXKOWG+LX09cOmgkhdPBr87fgWBUM7Em3uEJYSSb/6OmcVJPF/6hgy2OUJ64s029Gxf7l2nnQwHuKR+4fcm5Ghfo/k1TjxKs9Whv0RSuCfICBjBAka1E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="8cfd68cba3a91e3961905ccd2277f4eb0eb26ecf20b3f2ebbb10dd2a9fd8c0b1" Description="" Url=""><as:assemblyIdentity name="PLATAFORMAS.exe" version="1.0.0.1" publicKeyToken="3dc01d2da2ddb9d1" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ALEX\AR</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>zu45AP/Gfw0/28nKK/QkBQxQrsVNqJanVYpTxtB2X/E=</DigestValue></Reference></SignedInfo><SignatureValue>u69p1V/NGlgIll6VSK76eZFRUEbQKta0J3L4qAU0N8K4Rz4wQpXW3CFCasodJPDWX2TwjM7xtDYJA9kyEG3rmS0fhU5O5/eioULjViLLvi+KrFmnpzKUPe9P9MXBT2mUDqKOXzt1PC96oFk374klOEJlLvQDNPK671+zxGc6zJI=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xyY/Ea1/SrluE9QQKKpFDvLcTfTuCRrvA/CLGSYfaSQnklPbtLCyG00TXKOWG+LX09cOmgkhdPBr87fgWBUM7Em3uEJYSSb/6OmcVJPF/6hgy2OUJ64s029Gxf7l2nnQwHuKR+4fcm5Ghfo/k1TjxKs9Whv0RSuCfICBjBAka1E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBtTCCAR6gAwIBAgIQJOUkerndAbNMbmaFxMTcCDANBgkqhkiG9w0BAQsFADAZMRcwFQYDVQQDHg4AQQBMAEUAWABcAEEAUjAeFw0yNDA4MDcxMDM2NTFaFw0yNTA4MDcxNjM2NTFaMBkxFzAVBgNVBAMeDgBBAEwARQBYAFwAQQBSMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHJj8RrX9KuW4T1BAoqkUO8txN9O4JGu8D8IsZJh9pJCeSU9u0sLIbTRNco5Yb4tfT1w6aCSF08Gvzt+BYFQzsSbe4QlhJJv/o6ZxUk8X/qGDLY5QnrizTb0bF/uXaedDAe4pH7h9ybkaF+j+TVOPEqz1aG/RFK4J8gIGMECRrUQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAFd5Y7hpKaa8hAUk6GO6wyRnOIKWlVaWwZHSIV0oQkaKK6uCQ0flSTCUWVx3TXcMGrWsA7vkTutjjAOmPLUqZtXDRywLwtqOLnNKeEhA4nPtEXhHxrBOky1P3ET/Tj2M/OQ7Y9wbiF/KKBvixM6VgTG1ykEBWu7RM6UGDEkTMeuF</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
