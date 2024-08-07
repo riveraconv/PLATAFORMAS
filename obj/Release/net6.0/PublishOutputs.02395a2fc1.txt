@@ -1,0 +1,5 @@
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\publish\PLATAFORMAS.exe
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\publish\PLATAFORMAS.dll
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\publish\PLATAFORMAS.deps.json
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\publish\PLATAFORMAS.runtimeconfig.json
+C:\Users\AR\source\repos\PLATAFORMAS, proyecto completo\bin\Release\net6.0\publish\PLATAFORMAS.pdb
