@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PLATAFORMAS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4f29603d7639f99ffaaceb1981d0377c3bdf6e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06a2b14f868a0d9a6ec4a96a8604b071dbb7a539")]
 [assembly: System.Reflection.AssemblyProductAttribute("PLATAFORMAS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PLATAFORMAS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
