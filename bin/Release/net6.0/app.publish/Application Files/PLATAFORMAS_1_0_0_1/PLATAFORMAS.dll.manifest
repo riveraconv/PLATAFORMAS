@@ -62,22 +62,22 @@
       <dsig:DigestValue>khyJXof6UZf8T+uc6qkXabDcXwMjFycVX7A4tflMcVw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PLATAFORMAS.dll" size="28160">
+  <file name="PLATAFORMAS.dll" size="27648">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ri8nqlx3BftYtDlzGsV9nq3gI3RTeHAqrSJrp+o4X3o=</dsig:DigestValue>
+      <dsig:DigestValue>O/RD19PCUSJznBt3PhfqwxBitc+i8tu0EAXntVmsvU0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PLATAFORMAS.exe" size="151040">
+  <file name="PLATAFORMAS.exe" size="150528">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4mAUwYvs+GLnfJzlWnprPRgefGjuK71NRs9Pg5uJwck=</dsig:DigestValue>
+      <dsig:DigestValue>R2D12B04QcwUYEXXajYIpBhx2K/BM1d1acS+gdBvkyM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PLATAFORMAS.runtimeconfig.json" size="253">

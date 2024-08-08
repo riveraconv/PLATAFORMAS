@@ -7,7 +7,7 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Application Files\PLATAFORMAS_1_0_0_1\PLATAFORMAS.dll.manifest" size="4727">
+    <dependentAssembly dependencyType="install" codebase="PLATAFORMAS.dll.manifest" size="4727">
       <assemblyIdentity name="PLATAFORMAS.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
