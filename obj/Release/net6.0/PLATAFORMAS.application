@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="PLATAFORMAS.dll.manifest" size="4727">
+    <dependentAssembly dependencyType="install" codebase="PLATAFORMAS.dll.manifest" size="4381">
       <assemblyIdentity name="PLATAFORMAS.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4sxTtJuIrQ7iU0q1bMbRlI9hlD2WAhBi5W259OFjbpg=</dsig:DigestValue>
+        <dsig:DigestValue>CSes8JafXo3rOuVeIvh8uujcNdO8a9je3Doa2fc7pII=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
