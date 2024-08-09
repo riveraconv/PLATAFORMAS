@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0A1RpJmeH5W8SdNVT1sc4U6mg9hQ+WsdpJzhZPaGLzM=</dsig:DigestValue>
+      <dsig:DigestValue>JXk1fA3KOMzSaUFlCR99+D941aMleHaV5rQP8AOIl0U=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PLATAFORMAS.exe" size="150528">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>EHWVAxN/VNBs7bFjJsopv+NCs8SvNQ3bz6kzEAUT2/0=</dsig:DigestValue>
+      <dsig:DigestValue>/Uh2Bkrm1O2vwx/4dglxFSuQXm3Rs/0FknQIG/LxB+w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PLATAFORMAS.runtimeconfig.json" size="253">
