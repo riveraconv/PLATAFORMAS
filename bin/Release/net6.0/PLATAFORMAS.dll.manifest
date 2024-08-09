@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="17296">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="16384">
       <assemblyIdentity name="Launcher" version="8.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>60CeX+/Pxls7fj0In8PnF5WLrHWjOM/bmc8hX/FU6MM=</dsig:DigestValue>
+        <dsig:DigestValue>XFzHQgCkd9h+MuRDaHstSjLwJJTKMwtjPO2rA0k3Dos=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,22 +62,22 @@
       <dsig:DigestValue>khyJXof6UZf8T+uc6qkXabDcXwMjFycVX7A4tflMcVw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PLATAFORMAS.dll" size="28560">
+  <file name="PLATAFORMAS.dll" size="27648">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>KylfnmhKEihfU0dxXWzojP+tKBrRn7D6pDhmaIlb+VM=</dsig:DigestValue>
+      <dsig:DigestValue>0A1RpJmeH5W8SdNVT1sc4U6mg9hQ+WsdpJzhZPaGLzM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PLATAFORMAS.exe" size="151440">
+  <file name="PLATAFORMAS.exe" size="150528">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>c64MFNvvFMpkZpT+201y3ODix0bEHibphKPCoyGi1As=</dsig:DigestValue>
+      <dsig:DigestValue>EHWVAxN/VNBs7bFjJsopv+NCs8SvNQ3bz6kzEAUT2/0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PLATAFORMAS.runtimeconfig.json" size="253">
